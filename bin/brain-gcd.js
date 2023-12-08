@@ -57,6 +57,7 @@ if( array3[array3.length - 1] == question){
     console.log("Correct!");
     match++;
 }else{
-    console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + "'"+array3[array3.length - 1]+"'")
+    console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + "'"+array3[array3.length - 1]+"'");
+    console.log("Let's try again, " + name + "!");
 }
 }
