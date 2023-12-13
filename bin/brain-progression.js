@@ -2,13 +2,13 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
-export default name;
 
-var question;
+
+let question;
 console.log('Hello, ' + name + '!');
 console.log('What number is missing in the progression?');
 
-var match = 0;
+let match = 0;
 calc();
 calc();
 calc();
@@ -22,14 +22,14 @@ function result(){
 
 function calc(){
 
-var firstNum = Math.floor(Math.random() * 100);
-var secondNum = Math.floor(Math.random() * 10);
-var arrayNew = [];
+let firstNum = Math.floor(Math.random() * 100);
+let secondNum = Math.floor(Math.random() * 10);
+let arrayNew = [];
 for(let i = 0; i<10; i++){
     firstNum = firstNum  + secondNum;
     arrayNew.push(firstNum);
 }
-var array3 = [];
+let array3 = [];
 array3.push(arrayNew[secondNum])
 
 arrayNew[secondNum] = '..';  

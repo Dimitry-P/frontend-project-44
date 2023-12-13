@@ -2,13 +2,13 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
-export default name;
+
 console.log('Hello, ' + name + '!');
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
-var question;
-var number;
-var match = 0;
+let question;
+let number;
+let match = 0;
 calc();
 calc();
 calc();
@@ -25,7 +25,7 @@ number = Math.floor(Math.random() * 10);
 console.log('Question: ' + number);
 question = readlineSync.question("Your answer: ")
 
-var result = isPrime(number);
+let result = isPrime(number);
 if(result === true && question === "yes"){
     console.log("Correct!")
     match++;

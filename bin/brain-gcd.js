@@ -2,14 +2,14 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
-export default name;
 
-var question;
+
+let question;
 console.log('Hello, ' + name + '!');
 console.log('Find the greatest common divisor of given numbers.');
 
-var question;
-var match = 0;
+let question;
+let match = 0;
 calc();
 calc();
 calc();
@@ -22,12 +22,12 @@ function result(){
 
 
 function calc(){
-var firstNum = Math.floor(Math.random() * 1000);
-var secondNum = Math.floor(Math.random() * 1000);
+let firstNum = Math.floor(Math.random() * 1000);
+let secondNum = Math.floor(Math.random() * 1000);
 console.log("Question: " + firstNum + " " + secondNum);
 question = readlineSync.question('Your answer: ');
-var array = [];
-var array2 = [];
+let array = [];
+let array2 = [];
 for(let i = 1; i <= firstNum; i++){
     if(firstNum % i === 0){
         array.push(i);
@@ -42,7 +42,7 @@ for(let i = 1; i <= secondNum; i++){
 }
 console.log(array2);
 
-var array3 = []
+let array3 = []
 for(let r = 0; r < 50; r++){
     if(array.includes(array2[r])){
         array3.push(array2[r]);

@@ -2,13 +2,13 @@ import readlineSync from 'readline-sync';
 
 console.log('Welcome to the Brain Games!');
 const name = readlineSync.question('May I have your name? ');
-export default name;
 
-var question;
+
+let question;
 console.log('Hello, ' + name + '!');
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-var match = 0;
+let match = 0;
 func(question);
 func(question);
 func(question);
@@ -20,7 +20,7 @@ function result(){
 }
 
 function func(question){
-    var  number = Math.floor(Math.random() * 1000);
+    let  number = Math.floor(Math.random() * 1000);
 console.log("Question: " + number);
     question = readlineSync.question('Your answer: ');
     if(question !== "yes" && question !== "no" || question === ""){
