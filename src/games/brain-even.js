@@ -4,11 +4,15 @@
 import readlineSync from 'readline-sync';
 import {engine} from '../index.js';
 import {result2} from '../index.js';
+import {threeTimes} from '../index.js';
 
-engine(functionForGame);
+
+engine();
+result2();
+threeTimes(theGame)
 
 
-function functionForGame(name){
+function theGame(name){
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
  let question;
     let  number = Math.floor(Math.random() * 1000);
@@ -25,7 +29,7 @@ console.log("Question: " + number);
         
     }else if(number % 2 === 0 && number !== 0 && question === "yes"){
         console.log("Correct!");
-        
+       
         result2()
     }else if(number % 2 !== 0  && question === "no"){
         console.log("Correct!");
@@ -43,4 +47,4 @@ console.log("Question: " + number);
 
 
 
-export {functionForGame}
+

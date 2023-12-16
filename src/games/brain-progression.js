@@ -1,27 +1,22 @@
+#!/usr/bin/env node
+
+
 import readlineSync from 'readline-sync';
+import {engine} from '../index.js';
+import {result2} from '../index.js';
+import {threeTimes} from '../index.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-
-
-let question;
-console.log('Hello, ' + name + '!');
-console.log('What number is missing in the progression?');
-
-let match = 0;
-calc();
-calc();
-calc();
-result();
-function result(){
-    if(match === 3){
-        console.log('Congratulations, ' + name + '!')
-    }
-}
+engine();
+result2();
+threeTimes(theGame)
 
 
-function calc(){
 
+
+
+function theGame(name){
+    let question;
+    console.log('What number is missing in the progression?');
 let firstNum = Math.floor(Math.random() * 100);
 let secondNum = Math.floor(Math.random() * 10);
 let arrayNew = [];
@@ -37,7 +32,7 @@ console.log("Question: " + arrayNew.join(' '));
 question = readlineSync.question('Your answer: ');
 if(question == Number(array3)){
     console.log("correct!");
-    match++;
+    result2()
 }else{
     console.log("'"+ question +"' " + "is wrong answer ;" + "(." + "Correct answer was " + "'" + Number(array3) + "'");
     console.log("Let's try again, " + name + "!");

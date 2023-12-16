@@ -1,27 +1,19 @@
+#!/usr/bin/env node
+
 import readlineSync from 'readline-sync';
+import {engine} from '../index.js';
+import {result2} from '../index.js';
+import {threeTimes} from '../index.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-
-
-let question;
-console.log('Hello, ' + name + '!');
-console.log('Find the greatest common divisor of given numbers.');
-
-
-let match = 0;
-calc();
-calc();
-calc();
-result();
-function result(){
-    if(match === 3){
-      console.log('Congratulations, ' + name + '!')
-    }
- }
+engine();
+result2();
+threeTimes(theGame)
 
 
-function calc(){
+function theGame(name){
+    let question;
+
+    console.log('Find the greatest common divisor of given numbers.');
 let firstNum = Math.floor(Math.random() * 1000);
 let secondNum = Math.floor(Math.random() * 1000);
 console.log("Question: " + firstNum + " " + secondNum);
@@ -55,7 +47,7 @@ console.log(array3[array3.length - 1]);
 
 if( array3[array3.length - 1] == question){
     console.log("Correct!");
-    match++;
+    result2()
 }else{
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + "'"+array3[array3.length - 1]+"'");
     console.log("Let's try again, " + name + "!");

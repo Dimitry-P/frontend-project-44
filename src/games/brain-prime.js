@@ -1,26 +1,28 @@
+#!/usr/bin/env node
+
+
 import readlineSync from 'readline-sync';
+import {engine} from '../index.js';
+import {result2} from '../index.js';
+import {threeTimes} from '../index.js';
 
-console.log('Welcome to the Brain Games!');
-const name = readlineSync.question('May I have your name? ');
-
-console.log('Hello, ' + name + '!');
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-let question;
-let number;
-let match = 0;
-calc();
-calc();
-calc();
-lastOne();
-function lastOne(){
-    if(match === 3){
-      console.log('Congratulations, ' + name + '!')
-    }
- }
+engine();
+result2();
+threeTimes(theGame)
 
 
-function calc(){
+
+
+
+
+function theGame(name){
+    let question;
+    let number;
+    console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+    // if(match === 3){
+    //   console.log('Congratulations, ' + name + '!')
+    // }
+
 number = Math.floor(Math.random() * 10);
 console.log('Question: ' + number);
 question = readlineSync.question("Your answer: ")
@@ -28,13 +30,13 @@ question = readlineSync.question("Your answer: ")
 let result = isPrime(number);
 if(result === true && question === "yes"){
     console.log("Correct!")
-    match++;
+    result2()
 }else if(result === true && question !== "yes"){
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + " '"+"yes"+"'");
     console.log("Let's try again, " + name + "!");
 }else if(result === false && question === "no"){
     console.log("Correct!");
-    match++;
+    result2()
 }else if(result === false && question !== "no"){
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + " '"+"no"+"'");
     console.log("Let's try again, " + name + "!");
@@ -51,4 +53,5 @@ function isPrime(number){
     return number !== 1;
 }
     
+
 }
