@@ -7,12 +7,14 @@ import {threeTimes} from '../src/index.js';
 
 
 
-theGame(threeTimes())
+threeTimes(new TheGame())
 
 
 
-function theGame(name){
-    for(let i= 0; i<3; i++){
+function TheGame(){
+    this.program = "brain-calc";
+    this.init = function(name){
+    let answer = false;
 console.log('What is the result of the expression?');
 let question;
 let result;
@@ -33,13 +35,13 @@ if(operators[operator] === "+"){
 question = readlineSync.question('Your answer: ');
 if(question == result){
     console.log("correct");
-    result2();
+    answer = true;
 }else{
     console.log("'"+ question +"' " + "is wrong answer ;" + "(." + "Correct answer was " + "'" + result + "'");
     console.log("Let's try again, " + name + "!");
 }
   
+    return answer;  
     }
 }
-
 

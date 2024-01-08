@@ -5,14 +5,16 @@ import readlineSync from 'readline-sync';
 
 import {threeTimes} from '../src/index.js';
 
-theGame()
+
+
+threeTimes(new TheGame())
 
 
 
-
-
-function theGame(name){
-    let question;
+function TheGame(){
+    this.program = "brain-progression";
+    this.init = function(name){
+    let answer = false;
     console.log('What number is missing in the progression?');
 let firstNum = Math.floor(Math.random() * 100);
 let secondNum = Math.floor(Math.random() * 10);
@@ -26,14 +28,14 @@ array3.push(arrayNew[secondNum])
 
 arrayNew[secondNum] = '..';  
 console.log("Question: " + arrayNew.join(' '));
-question = readlineSync.question('Your answer: ');
+let question = readlineSync.question('Your answer: ');
 if(question == Number(array3)){
     console.log("correct!");
-    result2()
+    answer = true;
 }else{
     console.log("'"+ question +"' " + "is wrong answer ;" + "(." + "Correct answer was " + "'" + Number(array3) + "'");
     console.log("Let's try again, " + name + "!");
 }
-threeTimes();
-    result2();
+return answer;
 }  
+}

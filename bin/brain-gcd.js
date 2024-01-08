@@ -4,16 +4,23 @@ import readlineSync from 'readline-sync';
 
 import {threeTimes} from '../src/index.js';
 
-theGame()
 
-function theGame(name){
-    let question;
+
+
+threeTimes(new TheGame())
+
+
+
+function TheGame(){
+    this.program = "brain-gcd";
+    this.init = function(name){
+    let answer = false;
 
     console.log('Find the greatest common divisor of given numbers.');
 let firstNum = Math.floor(Math.random() * 1000);
 let secondNum = Math.floor(Math.random() * 1000);
 console.log("Question: " + firstNum + " " + secondNum);
-question = readlineSync.question('Your answer: ');
+let question = readlineSync.question('Your answer: ');
 let array = [];
 let array2 = [];
 for(let i = 1; i <= firstNum; i++){
@@ -43,11 +50,11 @@ console.log(array3[array3.length - 1]);
 
 if( array3[array3.length - 1] == question){
     console.log("Correct!");
-    result2()
+    answer = true;
 }else{
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + "'"+array3[array3.length - 1]+"'");
     console.log("Let's try again, " + name + "!");
 }
-threeTimes();
-    result2();
+return answer;
+}
 }

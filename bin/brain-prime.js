@@ -5,14 +5,18 @@ import readlineSync from 'readline-sync';
 
 import {threeTimes} from '../src/index.js';
 
-theGame()
+
+
+threeTimes(new TheGame())
 
 
 
 
+function TheGame(){
+    this.program = "brain-prime";
+    this.init = function(name){
+    let answer = false;
 
-
-function theGame(name){
     let question;
     let number;
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -27,13 +31,13 @@ question = readlineSync.question("Your answer: ")
 let result = isPrime(number);
 if(result === true && question === "yes"){
     console.log("Correct!")
-    result2()
+    answer = true;
 }else if(result === true && question !== "yes"){
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + " '"+"yes"+"'");
     console.log("Let's try again, " + name + "!");
 }else if(result === false && question === "no"){
     console.log("Correct!");
-    result2()
+    answer = true;
 }else if(result === false && question !== "no"){
     console.log("'"+question+"'"+ " is wrong answer ;" + "("+". Correct answer was" + " '"+"no"+"'");
     console.log("Let's try again, " + name + "!");
@@ -50,6 +54,6 @@ function isPrime(number){
     return number !== 1;
 }
     
-threeTimes();
-    result2();
+return answer;
+}
 }
