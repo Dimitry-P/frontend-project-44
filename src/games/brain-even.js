@@ -5,7 +5,7 @@ import readlineSync from 'readline-sync';
 
 
 function RunGame(){
-    this.question = 'Answer `yes` if the number is even, otherwise answer `no`.';
+    this.question = 'Answer "yes" if the number is even, otherwise answer "no".';
     this.init = function(name){
     let answer = false;
     let number = Math.floor(Math.random() * 1000); 
