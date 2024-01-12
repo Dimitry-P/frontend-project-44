@@ -9,7 +9,7 @@ function RunGame(){
     this.init = function(name){
     let answer = false;
     let number = Math.floor(Math.random() * 1000); 
-    console.log(number);
+    console.log('Question: ' + number);
     let question = readlineSync.question('Your answer: ');
         if(question !== 'yes' && question !== 'no' || question === ''){
             if(number % 2 == 0){
